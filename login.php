@@ -29,6 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->execute();
     $stmt->bind_result($hashedPassword, $status);
     $stmt->fetch();
+    
 
     if ($hashedPassword && password_verify($password, $hashedPassword)) {
         $_SESSION['username'] = $username;
